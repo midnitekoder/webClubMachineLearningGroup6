@@ -1,0 +1,184 @@
+[19:10] == ankitTripathi [75c04a17@gateway/web/freenode/ip.117.192.74.23] has joined #mlgrp6
+[19:10] == mode/#mlgrp6 [+ns] by herbert.freenode.net
+[19:33] == Charan [dfb66355@gateway/web/freenode/ip.223.182.99.85] has joined #mlgrp6
+[19:38] == Charan [dfb66355@gateway/web/freenode/ip.223.182.99.85] has quit [Ping timeout: 260 seconds]
+[19:42] == ankitTripathi changed the topic of #mlgrp6 to: Machine Learning: Introduction
+[19:47] == pun [75dd2567@gateway/web/freenode/ip.117.221.37.103] has joined #mlgrp6
+[19:52] == Pavana [653d95a0@gateway/web/freenode/ip.101.61.149.160] has joined #mlgrp6
+[19:53] == Aditya [dfbbc85f@gateway/web/freenode/ip.223.187.200.95] has joined #mlgrp6
+[19:57] == aup19 [~akshayupr@157.49.17.44] has joined #mlgrp6
+[19:57] == Prerana [5e816c30@gateway/web/freenode/ip.94.129.108.48] has joined #mlgrp6
+[19:58] == Suhas [75c0f848@gateway/web/freenode/ip.117.192.248.72] has joined #mlgrp6
+[19:58] == Suhas has changed nick to Guest96427
+[19:59] == vanshika [0116844b@gateway/web/freenode/ip.1.22.132.75] has joined #mlgrp6
+[20:00] == Guest96427 [75c0f848@gateway/web/freenode/ip.117.192.248.72] has left #mlgrp6 []
+[20:01] == Shash [b9891113@gateway/web/freenode/ip.185.137.17.19] has joined #mlgrp6
+[20:02] == SanjeevRao [ca8c8042@gateway/web/freenode/ip.202.140.128.66] has joined #mlgrp6
+[20:02] == Charan [dfb66b02@gateway/web/freenode/ip.223.182.107.2] has joined #mlgrp6
+[20:04] == Vilohit [75d8f454@gateway/web/freenode/ip.117.216.244.84] has joined #mlgrp6
+[20:05] <@ankitTripathi> aup19 and pun login with your original names
+[20:05] == pun [75dd2567@gateway/web/freenode/ip.117.221.37.103] has left #mlgrp6 []
+[20:06] == Puneet [75dd2567@gateway/web/freenode/ip.117.221.37.103] has joined #mlgrp6
+[20:06] == Charan [dfb66b02@gateway/web/freenode/ip.223.182.107.2] has quit [Client Quit]
+[20:07] <@ankitTripathi> Hello everyone!
+[20:07] == Saicharan [dfb66b02@gateway/web/freenode/ip.223.182.107.2] has joined #mlgrp6
+[20:07] <@ankitTripathi> This week's topics are:
+[20:07] <@ankitTripathi> 1. introduction to ml
+[20:07] <@ankitTripathi> 2. linear regression in one variable
+[20:07] == SuhasBS [75c0f848@gateway/web/freenode/ip.117.192.248.72] has joined #mlgrp6
+[20:07] <@ankitTripathi> 3. stochastic gradient descent
+[20:08] <@ankitTripathi> 4. logistic regression
+[20:08] <@ankitTripathi> So, in today's session we will discuss introduction to ml and some basics of linear regression in one variable
+[20:09] == SuhasBS has changed nick to suhasbs
+[20:09] <@ankitTripathi> Before we start lets make some ground rules clear: 1. when i ask if you are following reply with yep or which part you did not follow
+[20:09] <@ankitTripathi> 2. don't hesitate in asking doubts
+[20:10] <@ankitTripathi> 3. you are free to ping me personally if you are feeling shy in asking doubts here on the forum
+[20:10] <@ankitTripathi> So lets begin!
+[20:11] <@ankitTripathi> Machine learning a subset or a specific area of Artificial intelligence
+[20:12] <@ankitTripathi> Artificial intelligence deals with replicating human brain capabilities and apply them to perform tasks that are computationally intensive for a human brain
+[20:12] <@ankitTripathi> when i say computationally intensive i mean the number of steps that required to complete a task are very high
+[20:13] <@ankitTripathi> for example, consider i want you to count the number of cells in a sample
+[20:14] <@ankitTripathi> or give you a lot of data and ask you to provide me with some insights into it
+[20:14] <@ankitTripathi> Now machine learning in specific has many apoplications
+[20:14] <@ankitTripathi> learning are spam filters, recommendation engines, speech recognition systems (speech-to-text or customer service stuff), internet advertising, news clustering (Google News), related stories, handwriting recognition, questionable content identification, automatic closed captioning, and machine translation
+[20:15] <@ankitTripathi> spam filters deal with telling if an e-mail is spam or genuine
+[20:15] == AR_HeArT_DwEller [73fafa58@gateway/web/freenode/ip.115.250.250.88] has joined #mlgrp6
+[20:15] <@ankitTripathi> your recommendation for next video to play on youtube
+[20:15] <@ankitTripathi> siri
+[20:16] <AR_HeArT_DwEller> ??
+[20:16] <@ankitTripathi> clustering different news available on the internet with respect to the topic that dealing with
+[20:16] == AR_HeArT_DwEller [73fafa58@gateway/web/freenode/ip.115.250.250.88]
+[20:16] ==  realname : 115.250.250.88 - http://webchat.freenode.net
+[20:16] ==  channels : #mlgrp6
+[20:16] ==  server   : herbert.freenode.net [Webchat]
+[20:16] ==  idle     : 0 days 0 hours 0 minutes 14 seconds [connected: Tue Dec 13 20:15:25 2016]
+[20:16] == End of WHOIS
+[20:17] <@ankitTripathi> @AR_HeArT_DwEller we have started discussing the different applications of machine learning
+[20:17] <@ankitTripathi> for your convenience, I will share the log later on the group
+[20:18] <@ankitTripathi> is everyone following till here?
+[20:18] <Aditya> yep
+[20:18] <Puneet> yep
+[20:19] <Vilohit> yep
+[20:19] <Saicharan> yep
+[20:19] <Pavana> Yep
+[20:19] <Prerana> yep
+[20:19] <SanjeevRao> yep
+[20:19] <@ankitTripathi> good
+[20:19] <@ankitTripathi> machine learning can be broadly divided into two parts:
+[20:19] <@ankitTripathi> 1. supervised learning
+[20:19] <@ankitTripathi> 2. unsupervised learning
+[20:21] <@ankitTripathi> In supervised learning we have input parameters based on which the output changes
+[20:21] <@ankitTripathi> the input variables are called independent variables
+[20:21] <@ankitTripathi> the output variable is called dependent variable
+[20:21] <@ankitTripathi> for example: y=f(x0,x1)
+[20:22] <@ankitTripathi> here x0 and x1 are independent variables
+[20:22] <@ankitTripathi> y is dependent variable
+[20:22] <@ankitTripathi> in unsupervised learning, we are not provided the output variable
+[20:23] <@ankitTripathi> supervised learning is used to predict the value of the output variable
+[20:23] <@ankitTripathi> or to classify the input to a category
+[20:23] <@ankitTripathi> for example, if we have images of cats and dogs
+[20:23] <@ankitTripathi> and we want to classify images into cats and dogs
+[20:24] <@ankitTripathi> so here have two classes cats and dogs so this is a classification problem
+[20:25] <@ankitTripathi> but say we have rainfall levels and the temperature as parameters and we want to predict the humidity, this a regression problem
+[20:25] == ankitTripathi [75c04a17@gateway/web/freenode/ip.117.192.74.23]
+[20:25] ==  realname : 117.192.74.23 - http://webchat.freenode.net
+[20:25] ==  channels : @#mlgrp6
+[20:25] ==  server   : herbert.freenode.net [Webchat]
+[20:25] ==  idle     : 0 days 0 hours 0 minutes 5 seconds [connected: Tue Dec 13 19:10:45 2016]
+[20:25] == End of WHOIS
+[20:27] <@ankitTripathi> since, we make the machine or computer to learn, we need to propose a hypothesis
+[20:27] <@ankitTripathi> hypothesis is set of rules or property of our learning model
+[20:27] == Shash [b9891113@gateway/web/freenode/ip.185.137.17.19] has quit [Ping timeout: 260 seconds]
+[20:27] <@ankitTripathi> We also need to model our input to the learning model
+[20:28] <@ankitTripathi> and type of output we expect
+[20:28] == AR_HeArT_DwEller [73fafa58@gateway/web/freenode/ip.115.250.250.88] has quit [Ping timeout: 260 seconds]
+[20:28] <@ankitTripathi> if we have output, then we can say that we need to apply some type of supervised learning
+[20:29] <@ankitTripathi> If the output is a  class then, it is a classification problem
+[20:29] <@ankitTripathi> if it a variable then that takes real values then it is a regression problem
+[20:30] <@ankitTripathi> Now, we need to decide the type of learning model
+[20:30] <@ankitTripathi> In today session, we will only discuss one type of model called linear regression
+[20:31] <@ankitTripathi> its name is derived from the fact that we are using a straight line to fit our input to the corresponding output
+[20:31] <@ankitTripathi> and we have only one input variable so it is called linear regression in one variable
+[20:33] <@ankitTripathi> do you guys remember physics or chemistry lab where we plot graph for the different x axis values of say( chemical content or the level of water) and on the y axis we plot the property observed?
+[20:33] <@ankitTripathi> or something similar where we have some x values and their corresponding y values
+[20:33] <@ankitTripathi> ??
+[20:33] <@ankitTripathi> and then, we draw a straight line that passes through most of the points
+[20:34] <@ankitTripathi> Here we assume that the relation between input and output is linear
+[20:35] <@ankitTripathi> So basically in machine learning or artificial intelligence or any other field which is not deterministic (like atom and particle theories)
+[20:36] <@ankitTripathi> we first propose our assumptions(like thompson proposed pudding model)
+[20:36] <@ankitTripathi> then, we build math behind it and relate the experiments that fit with this model
+[20:37] <@ankitTripathi> and then, if we find cases where the theory is not fitting well and then, we say that the assumptions are not correct(like rutherford experiment) and then, we change assumptions
+[20:37] <@ankitTripathi> and this cycle continues(like neil bohr)
+[20:38] <@ankitTripathi> getting back to machine learning
+[20:38] <@ankitTripathi> we start with linear regression
+[20:38] <@ankitTripathi> then quadratic regression
+[20:38] <@ankitTripathi> then, some more complex model
+[20:39] <@ankitTripathi> then SVM or Neural Networks which will be discussed in the coming wees
+[20:39] <@ankitTripathi> weeks
+[20:39] <@ankitTripathi> so lets assume our data is a table with x and y
+[20:39] <@ankitTripathi> let our learning algorithm is y=f(x)
+[20:40] <@ankitTripathi> f is linear so it y=mx+c
+[20:40] <@ankitTripathi> where m is slope and c is intercept
+[20:40] <@ankitTripathi> Now, we need to decide which value of m and c gives the best results
+[20:41] <@ankitTripathi> So we decide a cost function which is a function that is used to evaluate our current model
+[20:41] <@ankitTripathi> One of the most popular cost function is called mean squared error(MSE)
+[20:41] == suhasbs [75c0f848@gateway/web/freenode/ip.117.192.248.72] has quit [Ping timeout: 260 seconds]
+[20:42] <@ankitTripathi> so say our table has xi and yi
+[20:42] <@ankitTripathi> i value changes from 0 to n
+[20:43] <@ankitTripathi> so out mse(f)=(1/2n)(summation over i from 0 to n( square of (target_i - predicted_i))
+[20:43] <@ankitTripathi> take time to understand the equation
+[20:43] <@ankitTripathi> let me know if you follow it or i need to explain it?
+[20:45] <@ankitTripathi> mse(f)=(1/2n)(summation over i from 0 to n( square of (predicted_i - target_i))
+[20:45] <@ankitTripathi> here target_i is yi
+[20:45] <@ankitTripathi> and predicted_i is the value of the yi predicted based on xi by our model
+[20:45] <@ankitTripathi> is it clear?
+[20:46] <@ankitTripathi> guys respond!
+[20:47] <Prerana> yep
+[20:47] <SanjeevRao> yes
+[20:47] <Saicharan> yep
+[20:47] <Pavana> Yes
+[20:47] <@ankitTripathi> everyone following till here? others!
+[20:47] <vanshika> yes
+[20:47] <Vilohit> yep
+[20:48] <Puneet> yep
+[20:48] <@ankitTripathi> but no one asked me why there is a 2 in the denominator
+[20:48] <@ankitTripathi> Well i will explain that in the next session when we take stochastic gradient descent head on
+[20:50] <@ankitTripathi> so we can say that when we find the appropriate values of m and c, we get minimum value of mse
+[20:51] <@ankitTripathi> minimize(m,c) (1/2n)(summation over i from 0 to n (mxi+c-yi)^2)
+[20:52] <@ankitTripathi> so for every value of m and c, we get a corresponding value of the above function lets, call it J
+[20:52] <@ankitTripathi> J(m,c)  has to be minimized
+[20:53] <@ankitTripathi> Now this an optimization problem
+[20:53] <@ankitTripathi> solved using stochastic gradient descent
+[20:54] <@ankitTripathi> do you guys want me to explain it now or tomorrow?
+[20:55] <@ankitTripathi> Okay, I will give some material today to read on gradient descent and so that it becomes easier for me to explain
+[20:56] <@ankitTripathi> It is a very important concept which is used literally everywhere in machine learning so I will take it tomorrow
+[20:57] <@ankitTripathi> If you guys have any doubt, you can ask otherwise we can stop here for today?
+[20:57] <Puneet> hey, i had a question. this might be early for it, but what language will we be using to program the predictions?
+[20:58] == suhasbs [75c0f197@gateway/web/freenode/ip.117.192.241.151] has joined #mlgrp6
+[20:58] <@ankitTripathi> these are algorithms and algorithms can be implemented in any language but while choosing language we need to consider some points
+[20:58] == Aditya [dfbbc85f@gateway/web/freenode/ip.223.187.200.95] has quit [Ping timeout: 260 seconds]
+[20:59] <@ankitTripathi> 1. are we trying to build a big software that has many different facilities, in that case we will avoid scripting languages like python or matlab
+[20:59] <@ankitTripathi> and we will consider c++, c#, java
+[21:00] <@ankitTripathi> but if we are building small sized software then python or R can be used for the ease
+[21:00] <@ankitTripathi> 2. Does language we are going to use have support for machine learning
+[21:00] == Aditya [7aab7d09@gateway/web/freenode/ip.122.171.125.9] has joined #mlgrp6
+[21:01] == Prerana [5e816c30@gateway/web/freenode/ip.94.129.108.48] has quit [Ping timeout: 260 seconds]
+[21:01] <@ankitTripathi> when i say support i mean that are there libraries already build that can to small tasks like Gradient descent just by a function call like we do normal calculations in c using math.h
+[21:01] == Prerana [5e816c30@gateway/web/freenode/ip.94.129.108.48] has joined #mlgrp6
+[21:02] <@ankitTripathi> R and python are suited for this because there is massive support using libraries
+[21:02] <@ankitTripathi> 3. Amount to computation, we need to train and test our model
+[21:03] <@ankitTripathi> Python, R or Matlab for that matter are slower when compared to C, C++
+[21:03] <@ankitTripathi> so if we need to do lots of computation, we will implement it in c or c++
+[21:03] <Puneet> But does c/c++ have libraries that support machine learning algos?
+[21:04] <@ankitTripathi> for most of our college work or projects, we will be using python or R for machine learning unless you have speed(computation) issues
+[21:04] <@ankitTripathi> c / c++ have some support but not as good as python or R
+[21:05] <@ankitTripathi> these supports are lib or codes available online on github or by open source foundatios
+[21:05] <@ankitTripathi> *foundations
+[21:05] <@ankitTripathi> have i answered your queries?
+[21:06] <Puneet> yes, thanks!
+[21:06] <@ankitTripathi> anyone else with doubts?
+[21:06] <@ankitTripathi> or questions?
+[21:07] <@ankitTripathi> Aditya aup19 Pavana Prerana Puneet Saicharan SanjeevRao suhasbs vanshika Vilohit?
+[21:08] <vanshika> same time tom?
+[21:08] <@ankitTripathi> yes
+[21:08] <@ankitTripathi> okay then, good night!
