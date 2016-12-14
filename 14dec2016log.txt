@@ -1,0 +1,170 @@
+[20:13] == ankitTripathi [75d8eb3f@gateway/web/freenode/ip.117.216.235.63] has joined #mlgrp6
+[20:13] <ankitTripathi> sorry i was disconnected
+[20:13] <ankitTripathi> someone please save the log till here
+[20:13] <ankitTripathi> @puneet yes
+[20:13] <ankitTripathi> is everyone following till here?
+[20:13] <ankitTripathi> quick!
+[20:14] == ankitTripathi_ [75d8eb3f@gateway/web/freenode/ip.117.216.235.63] has quit [Ping timeout: 260 seconds]
+[20:14] <Puneet> [20:09] <suhasbs> it has local minima?
+[20:14] <Puneet>  [20:10] <Puneet> that means we might end up in a local minima and not a global minima right?
+[20:15] <ankitTripathi> I mean that if we start from any random location on the surface, we can always slide down to a minima
+[20:15] <ankitTripathi> that minima is local in nature
+[20:15] <ankitTripathi> the figure on page 17 has only on minima
+[20:16] <ankitTripathi> hence local and global are same
+[20:16] <suhasbs> ok
+[20:16] <Puneet> oh ok
+[20:16] <ankitTripathi> For gradient descent algorithm to find the local minima, it is mandatory for J(m,c) to be convex
+[20:17] <ankitTripathi> Hence, while defining cost functions(J in our case), care has to be taken that it is convex
+[20:17] <ankitTripathi> go to page 24
+[20:17] <ankitTripathi> here there are many minimas
+[20:18] == Prerana [c3e2f671@gateway/web/freenode/ip.195.226.246.113] has quit [Ping timeout: 260 seconds]
+[20:18] <ankitTripathi> on page 26 there is formula
+[20:18] <ankitTripathi> that is the formula for gradient descent
+[20:19] <ankitTripathi> that is a general formula
+[20:19] <ankitTripathi> if our learning algorithm was dependent on more parameters other than m and c
+[20:20] == sanjeeva [67f62bd5@gateway/web/freenode/ip.103.246.43.213] has joined #mlgrp6
+[20:20] == sanjeeva [67f62bd5@gateway/web/freenode/ip.103.246.43.213] has left #mlgrp6 []
+[20:20] <ankitTripathi> we can write a general formula where theta_i represents ith parameter
+[20:21] <ankitTripathi> So the Gradient descent formula works like this
+[20:21] == Prerana [c3e2f671@gateway/web/freenode/ip.195.226.246.113] has joined #mlgrp6
+[20:21] <ankitTripathi> first we set some random value for m and c
+[20:22] == Shashank [cbdfcd1c@gateway/web/freenode/ip.203.223.205.28] has quit [Ping timeout: 260 seconds]
+[20:22] == Pavana [653d976d@gateway/web/freenode/ip.101.61.151.109] has joined #mlgrp6
+[20:22] <ankitTripathi> and then we update the value of m and c in successive iterations till either we achieve no change in successive updates or the the change is lesser than a specified limit
+[20:23] <ankitTripathi> m_(t+1)=m_t - dJ(m,c)_t/dm_t
+[20:23] <ankitTripathi> and c_(t+1)=c_t- dJ(m,c)_t/dc_t
+[20:24] <ankitTripathi> here, t is the iteration number
+[20:24] <ankitTripathi> so in the current iteration we update value based on the previous value
+[20:25] <ankitTripathi> both m and c are update at once, therefore effect of the update m is only seen in the next iteration and not in the current updation of c
+[20:25] <ankitTripathi> following till here?
+[20:25] <ankitTripathi> I know it is too much to understand at once so please clear your doubts
+[20:25] <ankitTripathi> ??
+[20:26] <ankitTripathi> are you following, quick!!
+[20:26] <Puneet> those are the differentials?
+[20:26] <ankitTripathi> yes
+[20:27] <ankitTripathi> guys reply
+[20:27] <ankitTripathi> i am waiting
+[20:27] <Puneet> i've understood
+[20:28] <Saicharan> It's fine till here.
+[20:28] <Sanjeev> understood.
+[20:29] <amithmkini> understood
+[20:29] <Prerana> Understood
+[20:29] <ankitTripathi> good
+[20:30] <ankitTripathi> but this algorithm does not assure convergence in finite time
+[20:30] <ankitTripathi> that it it may take forever to find the minima even when minima exists
+[20:31] <ankitTripathi> that because the gradient term which is subtracted from the current value may change the value of the variables arbitrarly
+[20:31] <ankitTripathi> It may not happen always but it does not assure that it will converge
+[20:32] <ankitTripathi> when i say finite time, I mean that our computers or supercomputer can compute in a finite amount of time
+[20:32] == Prerana_ [c3e2f671@gateway/web/freenode/ip.195.226.246.113] has joined #mlgrp6
+[20:32] <ankitTripathi> Second year guys may understand in the context of asymptotic analysis
+[20:33] <ankitTripathi> for first year crowd assume it for now and you will understand it later
+[20:33] <ankitTripathi> so we have learning rate (alpha)
+[20:33] == Prerana [c3e2f671@gateway/web/freenode/ip.195.226.246.113] has quit [Ping timeout: 260 seconds]
+[20:34] <ankitTripathi> go to page 30
+[20:35] <ankitTripathi> you see that if the value of alpha is large it oscillates between the two boundaries and finally converge
+[20:35] <ankitTripathi> if it is too less, it takes many steps to reach the minima
+[20:35] <ankitTripathi> that graph is plotted keeping one variable in mind but you can understand the same thing in the context of two variables(m,c)
+[20:36] <ankitTripathi> *(m and c)
+[20:36] <ankitTripathi> In this example we keep the value of alpha constant for training
+[20:37] <ankitTripathi> But there are approaches that keep reducing the value of alpha after every few iterations so that the algorithm stops in finite time.
+[20:37] <ankitTripathi> It is a common practice to reduce alpha(learning rate) in training of neural network which we discuss in 3rd week
+[20:38] <ankitTripathi> It is called annealing learning rate
+[20:38] <ankitTripathi> ^ just for info
+[20:38] <ankitTripathi> go to page 35
+[20:39] <ankitTripathi> here they have expanded J(m,c) or J(theta1, theta0) and differentiated first wrt m and then wrt c to get two equations
+[20:39] <ankitTripathi> Take a moment to understand it
+[20:40] <ankitTripathi> give a yup after you understand it
+[20:40] <ankitTripathi> I am waiting
+[20:42] <ankitTripathi> guys?
+[20:42] <Puneet> yea, got it
+[20:42] <Aditya> yup
+[20:42] <suhasbs> yes
+[20:43] <amithmkini> ya
+[20:43] <Saicharan> Yes
+[20:43] <Prerana_> yep
+[20:43] <Sanjeev> yep
+[20:43] <Pavana> Yep
+[20:43] <ankitTripathi> good
+[20:44] <ankitTripathi> on page 36 that equation is replaced with the differentiated formulas
+[20:44] <ankitTripathi> Now, this completes Gradient Descent
+[20:45] <ankitTripathi> we will start Logistic Regression
+[20:45] <ankitTripathi> now till now we have looked at methods to compute output value based on some input values
+[20:46] <ankitTripathi> but never tried to classify the input into some categories or classes
+[20:47] <ankitTripathi> say we have size of tumor as input and we have some corresponding output as whether it is cancer (malignant) or not a cancer(benign)
+[20:47] == VS [67f62bd5@gateway/web/freenode/ip.103.246.43.213] has joined #mlgrp6
+[20:47] <ankitTripathi> open week1ppt2.pdf
+[20:47] <ankitTripathi> and go to page 3
+[20:47] == Puneet [3b63c4aa@gateway/web/freenode/ip.59.99.196.170] has quit [Ping timeout: 260 seconds]
+[20:48] <ankitTripathi> VS please use your full name..it becomes easier for me to reply  one -to-one
+[20:48] == VS [67f62bd5@gateway/web/freenode/ip.103.246.43.213] has quit [Client Quit]
+[20:49] <ankitTripathi> in the graph we can see that on the x axis we have size of tumor and on the y axis we have 0 or 1
+[20:49] <ankitTripathi> 0 represents benign
+[20:49] <ankitTripathi> 1 represents malignant
+[20:50] == pun [3b63c4aa@gateway/web/freenode/ip.59.99.196.170] has joined #mlgrp6
+[20:50] <ankitTripathi> we need to divide our graph into two parts such that if we are given a size of the tumor, we can classify it either as 0 or 1
+[20:50] <ankitTripathi> this dividing line or curve is called decision boundary
+[20:51] == Saicharan [dfb62f57@gateway/web/freenode/ip.223.182.47.87] has left #mlgrp6 []
+[20:51] <ankitTripathi> In machine learning, we can broadly divide the process into two parts: training and testing
+[20:51] <ankitTripathi> training is the part in which we train our model
+[20:52] <ankitTripathi> in the test (or inference) phase we give input and our algorithm predicts the output value
+[20:52] <ankitTripathi> Linear regression it is a real number while in logistic regression(categorial) we are given a category
+[20:53] <ankitTripathi> categories are numbered like in the above case 0 and 1
+[20:53] <ankitTripathi> for simplicity
+[20:54] <vanshika> what does tumor mean here?
+[20:54] <ankitTripathi> In logistic regression, we define a function h such that when we give input as the parameter to the model it gives output in the range of [0,1]
+[20:55] <ankitTripathi> if the value of 0<=h(input)<0.5 then it is given category 0
+[20:55] <ankitTripathi> otherwise it given 1
+[20:55] <ankitTripathi> that is 0.5<=h(input)<=1
+[20:56] <ankitTripathi> go to page 6
+[20:56] <ankitTripathi> you can see that g(z) is called the sigmoid function
+[20:57] <ankitTripathi> g(z)=1/(1+pow(e,-z))
+[20:57] <ankitTripathi> so we convert from h to g by multiplying input with some theta to produce z
+[20:58] <ankitTripathi> and output of g lies between 0 and 1 and hence, our requirement is satisfied
+[20:58] <ankitTripathi> let input be called x
+[20:59] <ankitTripathi> in the tumor case x is just a number(size of the tumer)
+[20:59] <ankitTripathi> but if the input is dependent on more than one paramater then
+[20:59] <ankitTripathi> we can represent x as a matrix a
+[20:59] <ankitTripathi> * as a matrix
+[20:59] <ankitTripathi> so theta is no more a number but a matrix as well
+[21:00] <ankitTripathi> theta is n X 1
+[21:00] <ankitTripathi> and input x is n X1
+[21:01] <ankitTripathi> so thetaTranspose is 1 X n
+[21:01] <ankitTripathi> so when thetaTranspose is multiplied with x
+[21:01] <ankitTripathi> we get output as 1 X 1
+[21:02] <ankitTripathi> and hence, this can be fed to sigmoid function to produce the output in the range [0,1]
+[21:02] <ankitTripathi> following till here?
+[21:02] == vanshika [0116844b@gateway/web/freenode/ip.1.22.132.75] has quit [Quit: Page closed]
+[21:03] <pun> yep
+[21:03] <Pavana> Yep
+[21:03] <amithmkini> ya
+[21:03] == Prerana_ [c3e2f671@gateway/web/freenode/ip.195.226.246.113] has quit [Quit: Page closed]
+[21:04] <ankitTripathi> okay
+[21:04] <ankitTripathi> go to page 10
+[21:04] <ankitTripathi> the decision boundary that we discussed need not be always a threshold value or a line
+[21:04] <ankitTripathi> it can be a curve as well
+[21:05] <ankitTripathi> as on page 11
+[21:07] <ankitTripathi> as we formed a cost function, we need to find a cost function for logistic regression as well
+[21:07] <ankitTripathi> because without a cost function, we can find an optimal solution
+[21:08] <ankitTripathi> go to page 19
+[21:08] == Prerana [c3e2f671@gateway/web/freenode/ip.195.226.246.113] has joined #mlgrp6
+[21:09] <ankitTripathi> @ prerana i am copy pasting what you missed
+[21:09] <ankitTripathi> okay [21:04] <ankitTripathi> go to page 10 [21:04] <ankitTripathi> the decision boundary that we discussed need not be always a threshold value or a line [21:04] <ankitTripathi> it can be a curve as well [21:05] <ankitTripathi> as on page 11 [21:07] <ankitTripathi> as we formed a cost function, we need to find a cost function for logistic regression as well [21:07] <ankitTripathi> because without a cost function, we can find an optimal solution [21:08] <ankitTripath
+[21:09] <Prerana> Thanks!
+[21:09] <ankitTripathi> go to page 19
+[21:12] <ankitTripathi> In simple words if i have to explain the logic of that cost function i can say that we have output as either 0 or 1  and hence each type of output is multiplied with corresponding  negative log likelihood
+[21:12] <ankitTripathi> or negative of log of the probability of having that output
+[21:13] <ankitTripathi> so we penalize each output type with an error associated with that output
+[21:13] <ankitTripathi> if this concept is not very clear, you can read more about it
+[21:13] <ankitTripathi> but our discussion is just fine by considering it as equation
+[21:14] <ankitTripathi> I just provided a reasoning for having that equation
+[21:14] <ankitTripathi> so now we have J(theta)
+[21:14] <ankitTripathi> which is very similar to linear regression where we had J(m,c)
+[21:15] <ankitTripathi> so the rest of the procedure becomes same
+[21:15] <ankitTripathi> that is finding the optimal value of theta using Gradient Descent
+[21:16] <ankitTripathi> The slides that I had shared with you are from the famous Dr. Andrew NG course on Machine Learning which is unsaid first place to start learning machine learning
+[21:16] <ankitTripathi> it is on coursera
+[21:17] <ankitTripathi> I will share the link on the whatsapp group so that those who didn't attend today's session are also benifitted
+[21:17] <ankitTripathi> *benifited
+[21:18] <ankitTripathi> so you can go through that course for further understanding of the basics
+[21:18] <ankitTripathi> You guys have any doubt
+[21:18] <ankitTripathi> because thats all we have for today
