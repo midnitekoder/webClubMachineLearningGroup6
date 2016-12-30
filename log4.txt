@@ -1,0 +1,76 @@
+[19:05] <@ankitTripathi> in this session we will discuss ANNs
+[19:06] <@ankitTripathi> An Artificial Neural Network (ANN) is an information processing paradigm that is inspired by the biological nervous systems, such as the human brain’s information processing mechanism
+[19:06] <@ankitTripathi> The key element of this paradigm is the novel structure of the information processing system. It is composed of a large number of highly interconnected processing elements (neurons) working in unison to solve specific problems. NNs, like people, learn by example.
+[19:07] <@ankitTripathi> Note: the way neurons work in biology is different from the ANN
+[19:07] == Vilohit [0e8b9bd7@gateway/web/freenode/ip.14.139.155.215] has joined #mlgrp6
+[19:07] <@ankitTripathi> in neuroscience there are two types of neurons
+[19:08] <@ankitTripathi> 1. the one which triggers the next neuron connected to it only after its electric charge has reached a threshhold
+[19:09] <@ankitTripathi> 2. The electric signal is converted into chemical energy modules which are sent out of the neuron to all the connected neurons but they are sent through different exit gates each having a resistance
+[19:09] <@ankitTripathi> This chemical synapse is the one which is abstracted in ANN
+[19:10] <@ankitTripathi> Each neuron is connected to some other neurons(need not be all) which in turn, connected to some other neurons(need not be all)
+[19:10] <@ankitTripathi> and it sends output to other neurons connected to it
+[19:11] <@ankitTripathi> There each neuron is an accumulator of all the input it gets weighted by the connection and sends it all the other neurons connected to it
+[19:11] <@ankitTripathi> Most of the times this connection can be abstracted as directed graph
+[19:12] <@ankitTripathi> well to clear directed graph is like a one lane road
+[19:12] <@ankitTripathi> vehicles can only go in one direction
+[19:13] <@ankitTripathi> Well there are also some models in which the output of one neuron can indirectly become input to itself after being passed over different neurons...and it is called Recurrent Neural Network(beyond the course we have designed so study on your own if you are interested)
+[19:14] <@ankitTripathi> The connection of neurons that cannot have a cycle(or loop) are called feedforward networks
+[19:14] <@ankitTripathi> There are present in your eyes
+[19:15] <@ankitTripathi> The neuron in the optic nerve are progressively passed to different neurons till it reached celebrum (visual cortex)
+[19:16] <@ankitTripathi> Recurrent Neural Network is present in the ears(it is because of this sometimes we ask other person to repeat what he said but before he repeats we have understood...because the same input is processed in a loop improving each time till we can understand it)
+[19:17] <@ankitTripathi> http://www.extremetech.com/wp-content/uploads/2015/07/NeuralNetwork.png
+[19:17] <@ankitTripathi> look at this image
+[19:18] <@ankitTripathi> well a layer is said to be the collection of neurons that are not connected but when organised fall at the same depth from the input
+[19:18] <@ankitTripathi> so the first layer is called input layer
+[19:18] <@ankitTripathi> the last layer is called output layer
+[19:18] <@ankitTripathi> in between layers are called hidden layers
+[19:19] <@ankitTripathi> here in this image there is only one hidden layer, therefore it is called single layer perceptron or single layer feedforward network
+[19:20] <@ankitTripathi> ANNs are used for pattern recognition, image classification, etc
+[19:21] <@ankitTripathi> in image classification, the input layer is the image and output layer consists of different options we have(cat /dog)
+[19:21] <@ankitTripathi> The number of options(or classes) we have for classification is equal to the number of neurons in the output layer
+[19:21] <@ankitTripathi> as you would have noticed that this falls in the category of supervised learning because we are classifying
+[19:22] <@ankitTripathi> so there should be an error function and optimization mechanism
+[19:23] <@ankitTripathi> Remember Mean squared error? well it is the cost function even here
+[19:23] <@ankitTripathi> The weights between each connection is to be optimised such that we get least MSE
+[19:24] <@ankitTripathi> So in the training phase, we set weights as random , initially
+[19:24] <@ankitTripathi> then we run through the training dataset and calculate output
+[19:25] <@ankitTripathi> in the output layer, the neuron with the maximum output is considered the classified class
+[19:25] <@ankitTripathi> and it is used to calculate accuracy
+[19:26] == Vilohit [0e8b9bd7@gateway/web/freenode/ip.14.139.155.215] has quit [Ping timeout: 260 seconds]
+[19:26] <@ankitTripathi> now at each neuron we basically do summation(w_i * x_i) +b_i
+[19:26] <@ankitTripathi> where w_i the weight of the ith neuron connected to the neuron for which we are calculating
+[19:27] <@ankitTripathi> x_i is the input to the neuron coming from the ith neuron connected
+[19:27] <@ankitTripathi> so this is summed for all connections
+[19:27] <@ankitTripathi> then we a bias term called b
+[19:27] <@ankitTripathi> summation(w_i j* x_ij) +b_j
+[19:28] <@ankitTripathi> well write like this it is more correct
+[19:28] <@ankitTripathi> i the input neuron from where input is coming
+[19:28] <@ankitTripathi> j is the node for which we are calculating the output
+[19:28] <@ankitTripathi> b_j is the bias applied on that neuron
+[19:28] <@ankitTripathi> bias is just a value added to the summation
+[19:30] <@ankitTripathi> you can consider bias as amplification of the signal by a constant value
+[19:30] <@ankitTripathi> so that we have enough activation for the next layer
+[19:30] <@ankitTripathi> otherwise our signal will die before reaching the end
+[19:31] <@ankitTripathi> after accumulating the output of each neuron in a layer, it passed through a non-linear activation function like sigmoid function
+[19:32] <@ankitTripathi> Now after each training image is processed to get an output, we calculate MSE
+[19:32] <@ankitTripathi> and the error is backpropagated to each weight and bias in the network
+[19:32] <@ankitTripathi> Remember back propagation?
+[19:33] <@ankitTripathi> I wouldn't get into maths of backprop but if you are interested can read and ask me if you do not understand
+[19:34] <@ankitTripathi> the task of the backprop is to calculate the contribution of each weight and bias in the network towards the wrong classification
+[19:35] <@ankitTripathi> ANN are used for classification while we have other methods like SVM, Logistic regression and many more is because we do not feed hand coded classified but rather let the neural network take the weight just so that it fits the dataset
+[19:35] == Pavana_ [653db235@gateway/web/freenode/ip.101.61.178.53] has joined #mlgrp6
+[19:36] <@ankitTripathi> you can think as logic gates NAND and NOR which can realize any logic
+[19:36] <@ankitTripathi> so neural network can realize any function
+[19:36] <@ankitTripathi> but the method is not one-one analogous to the logic gates in the case of neural network
+[19:37] <@ankitTripathi> we have non-linear activations like sigmoid functions, ReLU etc to facilite the realization of any function
+[19:38] <@ankitTripathi> So, the general procedure is to divide our dataset into 3 parts, training set, validation set and test set
+[19:38] <@ankitTripathi> we train our network using training set
+[19:38] == Pavana [653db235@gateway/web/freenode/ip.101.61.178.53] has quit [Ping timeout: 260 seconds]
+[19:38] <@ankitTripathi> then we evaluate it using validation set
+[19:38] <@ankitTripathi> if it is not fine then we train it further
+[19:38] <@ankitTripathi> otherwise we test it against test set to get final accuracy
+[19:39] <@ankitTripathi> hope you got some basics of ANNs
+[19:40] <@ankitTripathi> ANNs is a widely researched area of artificial intelligence and is the building block of Deep Learning which is used in self driving cars, in facebook to tag your friends, in youtube to recommend next video to watch, in medical imaging to find if the image of the sample is cancer or not
+[19:41] <@ankitTripathi> and it is revolutionalizing most of the traditional AI or handcoded methods
+[19:41] <@ankitTripathi> I can explain the deeper concepts of ANNs or Deep learning but it is beyond the scope of this introductory program
+[19:41] <@ankitTripathi> so i guess i need to conclude ANNs here.
